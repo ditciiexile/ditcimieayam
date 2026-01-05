@@ -24,1644 +24,364 @@
       border-radius: 50%;
       animation: fall linear infinite;
     }
-  @keyframes fall {
-    from {
-      top: -10 px;
-      opacity: 1;
+    @keyframes fall {
+      from { top: -10px; opacity: 1; }
+      to { top: 100vh; opacity: 0; }
     }
-    to {
-      top: 100 vh;
-      opacity: 0;
-    }
-  }
-  /* Profil User di Kanan Atas */
-  .user - profile {
-    position: fixed;
-    top: 20 px;
-    right: 20 px;
-    z - index: 1000;
-    cursor: pointer;
-  }
-  .profile - icon {
-    width: 60 px;
-    height: 60 px;
-    background: linear - gradient(45 deg, #ff69b4, #ff1493);
-    border - radius: 50 % ;
-    display: flex;
-    align - items: center;
-    justify - content: center;
-    font - size: 1.8 em;
-    color: white;
-    box - shadow: 0 0 20 px rgba(255, 105, 180, 0.7);
-    transition: all 0.3 s ease;
-    border: 3 px solid rgba(255, 255, 255, 0.3);
-    animation: pulse 2 s infinite;
-  }
-  .profile - icon: hover {
-      transform: scale(1.1);
-      box - shadow: 0 0 30 px rgba(255, 105, 180, 1);
-    }
-    /* Popup Profil */
-    .profile - overlay {
+
+    /* Profil User di Kanan Atas */
+    .user-profile {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100 % ;
-      height: 100 % ;
-      background: rgba(0, 0, 0, 0.8);
-      z - index: 1001;
-      display: none;
-      backdrop - filter: blur(5 px);
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      cursor: pointer;
     }
-    .profile - popup {
-      position: fixed;
-      top: 50 % ;
-      left: 50 % ;
-      transform: translate(-50 % , -50 % );
-      background: linear - gradient(45 deg, rgba(255, 105, 180, 0.95), rgba(255, 20, 147, 0.95));
+    .profile-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8em;
       color: white;
-      padding: 30 px;
-      border - radius: 25 px;
-      z - index: 1002;
-      box - shadow: 0 0 50 px rgba(255, 105, 180, 0.9),
-      0 0 100 px rgba(255, 20, 147, 0.5);
-      backdrop - filter: blur(15 px);
-      border: 3 px solid rgba(255, 255, 255, 0.4);
-      width: 350 px;
-      max - width: 90 % ;
-      animation: popupAppear 0.5 s ease - out;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+      transition: all 0.3s ease;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      animation: pulse 2s infinite;
     }
-  @keyframes popupAppear {
-    0 % {
-      opacity: 0;
-      transform: translate(-50 % , -50 % ) scale(0.7);
+    .profile-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 105, 180, 1);
     }
-    100 % {
-      opacity: 1;
-      transform: translate(-50 % , -50 % ) scale(1);
-    }
-  }
-  .profile - popup h3 {
-    margin: 0 0 20 px 0;
-    text - align: center;
-    font - size: 1.8 em;
-    color: white;
-    text - shadow: 0 0 15 px rgba(255, 255, 255, 0.7);
-  }
-  .profile - popup p {
-    text - align: center;
-    margin - bottom: 20 px;
-    color: #ffccff;
-    font - size: 1.1 em;
-  }
-  .profile - input {
-    width: 100 % ;
-    padding: 15 px;
-    margin: 12 px 0;
-    border: 2 px solid rgba(255, 255, 255, 0.4);
-    border - radius: 12 px;
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    font - size: 1.1 em;
-    box - sizing: border - box;
-    transition: all 0.3 s ease;
-  }
-  .profile - input: focus {
-      outline: none;
-      border - color: rgba(255, 255, 255, 0.8);
-      background: rgba(255, 255, 255, 0.25);
-      box - shadow: 0 0 15 px rgba(255, 255, 255, 0.4);
-    }
-    .profile - input::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-      font - style: italic;
-    }
-  textarea.profile - input {
-    min - height: 120 px;
-    resize: vertical;
-    font - family: 'Arial', sans - serif;
-  }
-  .profile - button {
-    width: 100 % ;
-    padding: 15 px;
-    margin: 12 px 0;
-    border: none;
-    border - radius: 12 px;
-    background: linear - gradient(45 deg, #25D366, # 128 C7E);
-    color: white;
-    font - size: 1.2 em;
-    font - weight: bold;
-    cursor: pointer;
-    transition: all 0.3 s ease;
-    box - shadow: 0 0 20 px rgba(37, 211, 102, 0.5);
-  }
-  .profile - button: hover {
-      transform: scale(1.05);
-      box - shadow: 0 0 30 px rgba(37, 211, 102, 0.8);
-    }
-    .profile - button: active {
-      transform: scale(0.98);
-    }
-    .cancel - button {
-      background: linear - gradient(45 deg, #ff4757, #ff3838);
-      box - shadow: 0 0 20 px rgba(255, 71, 87, 0.5);
-    }
-    .cancel - button: hover {
-      box - shadow: 0 0 30 px rgba(255, 71, 87, 0.8);
-    }
-    .success - message {
-      text - align: center;
-      padding: 20 px;
-      background: rgba(37, 211, 102, 0.2);
-      border - radius: 12 px;
-      margin: 15 px 0;
-      display: none;
-      animation: fadeIn 0.5 s ease - out;
-    }
-    .error - message {
-      text - align: center;
-      padding: 20 px;
-      background: rgba(255, 71, 87, 0.2);
-      border - radius: 12 px;
-      margin: 15 px 0;
-      display: none;
-      animation: fadeIn 0.5 s ease - out;
-    }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  .user - info {
-    position: fixed;
-    top: 20 px;
-    right: 90 px;
-    background: linear - gradient(45 deg, rgba(255, 105, 180, 0.9), rgba(255, 20, 147, 0.9));
-    padding: 10 px 20 px;
-    border - radius: 50 px;
-    z - index: 999;
-    box - shadow: 0 0 20 px rgba(255, 105, 180, 0.7);
-    border: 2 px solid rgba(255, 255, 255, 0.3);
-    display: none;
-    animation: slideIn 0.3 s ease - out;
-    max - width: 200 px;
-    white - space: nowrap;
-    overflow: hidden;
-    text - overflow: ellipsis;
-  }
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(20 px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  /* Efek gelembung */
-  .bubble {
-    position: absolute;
-    border - radius: 50 % ;
-    pointer - events: none;
-    z - index: 1;
-    background: radial - gradient(circle,
-      rgba(255, 255, 255, 0.1) 0 % ,
-      rgba(255, 105, 180, 0.2) 30 % ,
-      rgba(255, 20, 147, 0.1) 70 % ,
-      transparent 100 % );
-    box - shadow: inset 0 0 20 px rgba(255, 255, 255, 0.2),
-    0 0 20 px rgba(255, 105, 180, 0.3),
-    inset 0 0 40 px rgba(255, 20, 147, 0.2);
-    transform: translate(-50 % , -50 % );
-    opacity: 0;
-  }
-  @keyframes bubbleFloat {
-    0 % {
-      transform: translate(-50 % , -50 % ) scale(0);
-      opacity: 0.8;
-    }
-    50 % {
-      opacity: 0.6;
-    }
-    100 % {
-      transform: translate(-50 % , -50 % ) scale(1.5) translateY(-100 px);
-      opacity: 0;
-    }
-  }
-  @keyframes bubbleFloat2 {
-    0 % {
-      transform: translate(-50 % , -50 % ) scale(0) rotate(0 deg);
-      opacity: 0.8;
-    }
-    50 % {
-      opacity: 0.6;
-    }
-    100 % {
-      transform: translate(-50 % , -50 % ) scale(1.8) translateY(-120 px) rotate(180 deg);
-      opacity: 0;
-    }
-  }
-  @keyframes bubbleFloat3 {
-    0 % {
-      transform: translate(-50 % , -50 % ) scale(0);
-      opacity: 0.9;
-    }
-    100 % {
-      transform: translate(-50 % , -50 % ) scale(2) translateY(-150 px);
-      opacity: 0;
-    }
-  }
-  .bubble - heart {
-    position: absolute;
-    font - size: 20 px;
-    color: #ff69b4;
-    opacity: 0;
-    pointer - events: none;
-    z - index: 2;
-    text - shadow: 0 0 10 px #ff1493;
-    transform: translate(-50 % , -50 % );
-  }
-  @keyframes heartFloat {
-    0 % {
-      transform: translate(-50 % , -50 % ) scale(0) rotate(0 deg);
-      opacity: 1;
-    }
-    50 % {
-      opacity: 0.8;
-    }
-    100 % {
-      transform: translate(-50 % , -50 % ) scale(1.5) translateY(-100 px) rotate(360 deg);
-      opacity: 0;
-    }
-  }
-  /* Pesan terakhir */
-  .random - message {
-    position: absolute;
-    font - size: 1.2 em;
-    text - align: center;
-    color: #ffccff;
-    background: linear - gradient(45 deg,
-      rgba(255, 105, 180, 0.8),
-      rgba(255, 20, 147, 0.8));
-    padding: 15 px 20 px;
-    border - radius: 15 px;
-    backdrop - filter: blur(10 px);
-    border: 3 px solid rgba(255, 105, 180, 0.6);
-    box - shadow: 0 0 30 px rgba(255, 105, 180, 0.7),
-    inset 0 0 20 px rgba(255, 255, 255, 0.2);
-    z - index: 15;
-    opacity: 0;
-    transform: translate(-50 % , -50 % ) scale(0.8);
-    pointer - events: auto;
-    max - width: 300 px;
-    min - width: 250 px;
-    line - height: 1.4;
-    text - shadow: 0 0 10 px rgba(255, 105, 180, 0.8);
-    word - wrap: break -word;
-    font - weight: bold;
-    overflow: hidden;
-    white - space: normal;
-  }
-  @keyframes messageAppear {
-    0 % {
-      opacity: 0;
-      transform: translate(-50 % , -50 % ) scale(0.5) rotate(-5 deg);
-    }
-    15 % {
-      opacity: 1;
-      transform: translate(-50 % , -50 % ) scale(1.05) rotate(0 deg);
-    }
-    30 % {
-      transform: translate(-50 % , -50 % ) scale(1) rotate(2 deg);
-    }
-    70 % {
-      opacity: 1;
-      transform: translate(-50 % , -50 % ) scale(1) rotate(0 deg);
-    }
-    85 % {
-      opacity: 0.8;
-      transform: translate(-50 % , -50 % ) scale(0.95) rotate(-2 deg);
-    }
-    100 % {
-      opacity: 0;
-      transform: translate(-50 % , -50 % ) scale(0.8) rotate(5 deg);
-    }
-  }
-  @keyframes messageGlow {
-    0 % , 100 % {
-      box - shadow: 0 0 30 px rgba(255, 105, 180, 0.7),
-      inset 0 0 20 px rgba(255, 255, 255, 0.2);
-      text - shadow: 0 0 10 px rgba(255, 105, 180, 0.8);
-    }
-    50 % {
-      box - shadow: 0 0 50 px rgba(255, 105, 180, 0.9),
-      0 0 70 px rgba(255, 20, 147, 0.6),
-      inset 0 0 30 px rgba(255, 255, 255, 0.3);
-      text - shadow: 0 0 15 px rgba(255, 105, 180, 1),
-      0 0 25 px rgba(255, 20, 147, 0.8);
-    }
-  }
-  /* Teks melengkung di paling atas */
-  .curved - text - container {
-    position: absolute;
-    top: 10 % ;
-    left: 50 % ;
-    transform: translate(-50 % , -50 % );
-    width: 100 % ;
-    text - align: center;
-    z - index: 10;
-    perspective: 500 px;
-  }
-  .curved - text {
-    font - size: 2.5 em;
-    font - weight: bold;
-    color: #ff69b4;
-    text - shadow:
-      0 0 10 px #ff69b4,
-      0 0 20 px #ff1493,
-      0 0 30 px #ff1493;
-    animation:
-      waveMove 4 s ease - in - out infinite,
-      pulseGlow 2 s ease - in - out infinite,
-      floatUpDown 3 s ease - in - out infinite;
-    display: inline - block;
-    padding: 15 px 30 px;
-    background: linear - gradient(45 deg,
-      rgba(255, 105, 180, 0.1),
-      rgba(255, 20, 147, 0.1));
-    border - radius: 50 px;
-    backdrop - filter: blur(5 px);
-    border: 2 px solid rgba(255, 105, 180, 0.3);
-    box - shadow:
-      0 0 25 px rgba(255, 105, 180, 0.5),
-      inset 0 0 15 px rgba(255, 255, 255, 0.1);
-    transform - style: preserve - 3 d;
-    letter - spacing: 2 px;
-  }
-  @keyframes waveMove {
-    0 % , 100 % {
-      transform: translateY(0)
-      rotateX(0 deg)
-      scale(1);
-      border - radius: 50 px 20 px 50 px 20 px;
-    }
-    25 % {
-      transform: translateY(-5 px)
-      rotateX(5 deg)
-      scale(1.05);
-      border - radius: 20 px 50 px 20 px 50 px;
-    }
-    50 % {
-      transform: translateY(0)
-      rotateX(0 deg)
-      scale(1);
-      border - radius: 50 px 20 px 50 px 20 px;
-    }
-    75 % {
-      transform: translateY(5 px)
-      rotateX(-5 deg)
-      scale(1.05);
-      border - radius: 20 px 50 px 20 px 50 px;
-    }
-  }
-  @keyframes pulseGlow {
-    0 % , 100 % {
-      text - shadow: 0 0 10 px #ff69b4,
-      0 0 20 px #ff1493,
-      0 0 30 px #ff1493;
-      box - shadow: 0 0 25 px rgba(255, 105, 180, 0.5),
-      inset 0 0 15 px rgba(255, 255, 255, 0.1);
-    }
-    50 % {
-      text - shadow: 0 0 15 px #ff69b4,
-      0 0 30 px #ff1493,
-      0 0 45 px #ff1493,
-      0 0 60 px rgba(255, 20, 147, 0.5);
-      box - shadow: 0 0 40 px rgba(255, 105, 180, 0.8),
-      inset 0 0 25 px rgba(255, 255, 255, 0.2);
-    }
-  }
-  @keyframes floatUpDown {
-    0 % , 100 % {
-      transform: translateY(0);
-    }
-    50 % {
-      transform: translateY(-10 px);
-    }
-  }
-  .love - text {
-    position: absolute;
-    top: 35 % ;
-    left: 50 % ;
-    transform: translate(-50 % , -50 % );
-    font - size: 3 em;
-    text - align: center;
-    color: #ff69b4;
-    text - shadow: 0 0 10 px #ff69b4;
-    animation: float 3 s ease - in - out infinite;
-    z - index: 10;
-  }
-  @keyframes float {
-    0 % , 100 % {
-      transform: translate(-50 % , -50 % ) translateY(0 px);
-    }
-    50 % {
-      transform: translate(-50 % , -50 % ) translateY(-10 px);
-    }
-  }
-  .additional - message {
-    position: absolute;
-    bottom: 20 px;
-    right: 20 px;
-    font - size: 1.8 em;
-    text - align: right;
-    color: #ff69b4;
-    text - shadow: 0 0 10 px #ff69b4;
-    z - index: 10;
-    animation: expandText 5 s ease - in - out infinite;
-    padding: 15 px 25 px;
-    background: linear - gradient(45 deg, rgba(255, 105, 180, 0.2), rgba(255, 20, 147, 0.2));
-    border - radius: 15 px;
-    backdrop - filter: blur(5 px);
-    border: 2 px solid rgba(255, 105, 180, 0.3);
-    box - shadow: 0 0 20 px rgba(255, 105, 180, 0.3);
-    transform - origin: right bottom;
-  }
-  @keyframes expandText {
-    0 % , 100 % {
-      transform: scale(1);
-      padding: 15 px 25 px;
-      font - size: 1.8 em;
-      box - shadow: 0 0 20 px rgba(255, 105, 180, 0.3);
-      border - color: rgba(255, 105, 180, 0.3);
-    }
-    50 % {
-      transform: scale(1.15);
-      padding: 20 px 35 px;
-      font - size: 2.1 em;
-      box - shadow: 0 0 40 px rgba(255, 105, 180, 0.7);
-      border - color: rgba(255, 105, 180, 0.7);
-      background: linear - gradient(45 deg, rgba(255, 105, 180, 0.3), rgba(255, 20, 147, 0.3));
-    }
-  }
-  .love - button {
-    position: absolute;
-    top: 50 % ;
-    left: 50 % ;
-    transform: translate(-50 % , -50 % );
-    background: linear - gradient(45 deg, #ff69b4, #ff1493);
-    border: none;
-    border - radius: 50 px;
-    color: white;
-    font - size: 1.5 em;
-    font - weight: bold;
-    padding: 15 px 40 px;
-    cursor: pointer;
-    box - shadow: 0 0 20 px rgba(255, 105, 180, 0.7);
-    transition: all 0.3 s ease;
-    animation: pulse 2 s infinite;
-    z - index: 10;
-    overflow: hidden;
-  }
-  @keyframes pulse {
-    0 % {
-      transform: translate(-50 % , -50 % ) scale(1);
-      box - shadow: 0 0 20 px rgba(255, 105, 180, 0.7);
-    }
-    50 % {
-      transform: translate(-50 % , -50 % ) scale(1.1);
-      box - shadow: 0 0 30 px rgba(255, 105, 180, 0.9);
-    }
-    100 % {
-      transform: translate(-50 % , -50 % ) scale(1);
-      box - shadow: 0 0 20 px rgba(255, 105, 180, 0.7);
-    }
-  }
-  .love - button: hover {
-      transform: translate(-50 % , -50 % ) scale(1.15);
-      box - shadow: 0 0 40 px rgba(255, 105, 180, 1);
-    }
-    .love - button::before {
-      content: '';
-      position: absolute;
-      top: 50 % ;
-      left: 50 % ;
-      width: 0;
-      height: 0;
-      border - radius: 50 % ;
-      background: rgba(255, 255, 255, 0.3);
-      transform: translate(-50 % , -50 % );
-      transition: width 0.6 s,
-      height 0.6 s;
-    }
-    .love - button: active::before {
-      width: 300 px;
-      height: 300 px;
-    }
-    .button - caption {
-      position: absolute;
-      top: 65 % ;
-      left: 50 % ;
-      transform: translate(-50 % , -50 % );
-      font - size: 1.2 em;
-      text - align: center;
-      color: #ffccff;
-      text - shadow: 0 0 8 px rgba(255, 105, 180, 0.8);
-      margin - top: 120 px;
-      padding: 10 px 20 px;
-      background: rgba(255, 105, 180, 0.1);
-      border - radius: 20 px;
-      backdrop - filter: blur(5 px);
-      animation: captionGlow 3 s ease - in - out infinite;
-      z - index: 10;
-      max - width: 80 % ;
-    }
-  @keyframes captionGlow {
-    0 % , 100 % {
-      text - shadow: 0 0 8 px rgba(255, 105, 180, 0.8);
-      transform: translate(-50 % , -50 % ) scale(1);
-    }
-    50 % {
-      text - shadow: 0 0 15 px rgba(255, 105, 180, 1);
-      transform: translate(-50 % , -50 % ) scale(1.02);
-    }
-  }
-  .whatsapp - popup {
-    position: fixed;
-    top: 50 % ;
-    left: 50 % ;
-    transform: translate(-50 % , -50 % );
-    background: linear - gradient(45 deg, #25D366, # 128 C7E);
-    color: white;
-    padding: 30 px 40 px;
-    border - radius: 20 px;
-    text - align: center;
-    z - index: 1000;
-    box - shadow: 0 0 40 px rgba(37, 211, 102, 0.8);
-    animation: popupAppear 0.5 s ease - out;
-    display: none;
-    backdrop - filter: blur(10 px);
-    border: 2 px solid rgba(255, 255, 255, 0.3);
-  }
-  @keyframes popupAppear {
-    0 % {
-      opacity: 0;
-      transform: translate(-50 % , -50 % ) scale(0.5);
-    }
-    100 % {
-      opacity: 1;
-      transform: translate(-50 % , -50 % ) scale(1);
-    }
-  }
-  .whatsapp - popup h3 {
-    margin: 0 0 15 px 0;
-    font - size: 1.8 em;
-  }
-  .whatsapp - popup p {
-    margin: 0 0 20 px 0;
-    font - size: 1.2 em;
-  }
-  .whatsapp - button {
-    background: white;
-    color: #25D366;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1.2em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 5px;
-        }
-        .whatsapp-button:hover {
-            background: # f0f0f0;
-    transform: scale(1.05);
-  }
-  .cancel - button {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2 px solid white;
-  }
-  .cancel - button: hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-    .overlay {
+
+    /* Popup Profil */
+    .profile-overlay {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100 % ;
-      height: 100 % ;
+      width: 100%;
+      height: 100%;
       background: rgba(0, 0, 0, 0.8);
-      z - index: 999;
+      z-index: 1001;
       display: none;
+      backdrop-filter: blur(5px);
     }
-    .heart {
-      position: absolute;
-      font - size: 20 px;
-      color: #ff69b4;
-      opacity: 0;
-      pointer - events: none;
-      z - index: 5;
+    .profile-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(45deg, rgba(255, 105, 180, 0.95), rgba(255, 20, 147, 0.95));
+      color: white;
+      padding: 30px;
+      border-radius: 25px;
+      z-index: 1002;
+      box-shadow: 0 0 50px rgba(255, 105, 180, 0.9), 0 0 100px rgba(255, 20, 147, 0.5);
+      backdrop-filter: blur(15px);
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      width: 350px;
+      max-width: 90%;
+      display: none;
+      animation: popupAppear 0.5s ease-out;
     }
+    @keyframes popupAppear {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.7); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    .profile-popup h3 { margin: 0 0 20px 0; text-align: center; font-size: 1.8em; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.7); }
+    .profile-popup p { text-align: center; margin-bottom: 20px; color: #ffccff; font-size: 1.1em; }
+    .profile-input {
+      width: 100%; padding: 15px; margin: 12px 0;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 12px; background: rgba(255, 255, 255, 0.15);
+      color: white; font-size: 1.1em; box-sizing: border-box; transition: all 0.3s ease;
+    }
+    .profile-input:focus { outline: none; border-color: rgba(255, 255, 255, 0.8); background: rgba(255, 255, 255, 0.25); box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+    textarea.profile-input { min-height: 120px; resize: vertical; font-family: 'Arial', sans-serif; }
+    
+    .profile-button {
+      width: 100%; padding: 15px; margin: 12px 0; border: none; border-radius: 12px;
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white; font-size: 1.2em; font-weight: bold; cursor: pointer; transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+    }
+    .profile-button:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(37, 211, 102, 0.8); }
+    .cancel-button { background: linear-gradient(45deg, #ff4757, #ff3838); box-shadow: 0 0 20px rgba(255, 71, 87, 0.5); }
+    .success-message, .error-message { text-align: center; padding: 20px; border-radius: 12px; margin: 15px 0; display: none; animation: fadeIn 0.5s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .user-info {
+      position: fixed; top: 20px; right: 90px;
+      background: linear-gradient(45deg, rgba(255, 105, 180, 0.9), rgba(255, 20, 147, 0.9));
+      padding: 10px 20px; border-radius: 50px; z-index: 999;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.7); border: 2px solid rgba(255, 255, 255, 0.3);
+      display: none; animation: slideIn 0.3s ease-out; max-width: 200px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+
+    /* Efek gelembung */
+    .bubble {
+      position: absolute; border-radius: 50%; pointer-events: none; z-index: 1;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 105, 180, 0.2) 30%, transparent 100%);
+      transform: translate(-50%, -50%); opacity: 0;
+    }
+    @keyframes bubbleFloat {
+      0% { transform: translate(-50%, -50%) scale(0); opacity: 0.8; }
+      100% { transform: translate(-50%, -50%) scale(1.5) translateY(-100px); opacity: 0; }
+    }
+    @keyframes bubbleFloat2 {
+      0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 0.8; }
+      100% { transform: translate(-50%, -50%) scale(1.8) translateY(-120px) rotate(180deg); opacity: 0; }
+    }
+    @keyframes bubbleFloat3 {
+      0% { transform: translate(-50%, -50%) scale(0); opacity: 0.9; }
+      100% { transform: translate(-50%, -50%) scale(2) translateY(-150px); opacity: 0; }
+    }
+
+    .bubble-heart {
+      position: absolute; font-size: 20px; color: #ff69b4; opacity: 0;
+      pointer-events: none; z-index: 2; transform: translate(-50%, -50%);
+    }
+    @keyframes heartFloat {
+      0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(1.5) translateY(-100px) rotate(360deg); opacity: 0; }
+    }
+
+    /* Pesan terakhir */
+    .random-message {
+      position: absolute; font-size: 1.2em; text-align: center; color: #ffccff;
+      background: linear-gradient(45deg, rgba(255, 105, 180, 0.8), rgba(255, 20, 147, 0.8));
+      padding: 15px 20px; border-radius: 15px; backdrop-filter: blur(10px);
+      border: 3px solid rgba(255, 105, 180, 0.6); box-shadow: 0 0 30px rgba(255, 105, 180, 0.7);
+      z-index: 15; opacity: 0; transform: translate(-50%, -50%) scale(0.8);
+      max-width: 300px; min-width: 250px; font-weight: bold;
+    }
+    @keyframes messageAppear {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+      15%, 85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    }
+
+    .curved-text-container {
+      position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%);
+      width: 100%; text-align: center; z-index: 10;
+    }
+    .curved-text {
+      font-size: 2.5em; font-weight: bold; color: #ff69b4;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+      display: inline-block; padding: 15px 30px;
+      background: rgba(255, 105, 180, 0.1); border-radius: 50px;
+      backdrop-filter: blur(5px); border: 2px solid rgba(255, 105, 180, 0.3);
+      animation: waveMove 4s ease-in-out infinite;
+    }
+    @keyframes waveMove {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .love-text {
+      position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%);
+      font-size: 3em; text-align: center; color: #ff69b4; text-shadow: 0 0 10px #ff69b4;
+      animation: float 3s ease-in-out infinite; z-index: 10;
+    }
+    @keyframes float { 0%, 100% { transform: translate(-50%, -50%) translateY(0px); } 50% { transform: translate(-50%, -50%) translateY(-10px); } }
+
+    .additional-message {
+      position: absolute; bottom: 20px; right: 20px; font-size: 1.8em; color: #ff69b4;
+      text-shadow: 0 0 10px #ff69b4; z-index: 10; animation: expandText 5s ease-in-out infinite;
+      padding: 15px 25px; background: rgba(255, 105, 180, 0.2); border-radius: 15px;
+    }
+    @keyframes expandText { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+
+    .love-button {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: linear-gradient(45deg, #ff69b4, #ff1493); border: none; border-radius: 50px;
+      color: white; font-size: 1.5em; font-weight: bold; padding: 15px 40px; cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.7); animation: pulse 2s infinite; z-index: 10;
+    }
+    @keyframes pulse { 0% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.1); } 100% { transform: translate(-50%, -50%) scale(1); } }
+
+    .button-caption {
+      position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%);
+      font-size: 1.2em; text-align: center; color: #ffccff; margin-top: 120px;
+      padding: 10px 20px; background: rgba(255, 105, 180, 0.1); border-radius: 20px; z-index: 10;
+    }
+
+    .whatsapp-popup {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: linear-gradient(45deg, #25D366, #128C7E); color: white;
+      padding: 30px 40px; border-radius: 20px; text-align: center; z-index: 1000;
+      box-shadow: 0 0 40px rgba(37, 211, 102, 0.8); display: none;
+    }
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 999; display: none; }
+    
+    .heart { position: absolute; font-size: 20px; color: #ff69b4; opacity: 0; pointer-events: none; z-index: 5; }
     .lightning {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100 % ;
-      height: 100 % ;
-      background - color: rgba(255, 255, 255, 0.8);
-      opacity: 0;
-      pointer - events: none;
-      animation: flash 0.1 s ease - out;
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(255, 255, 255, 0.8); opacity: 0; pointer-events: none;
     }
-  @keyframes flash {
-    0 % {
-      opacity: 0;
-    }
-    50 % {
-      opacity: 1;
-    }
-    100 % {
-      opacity: 0;
-    }
-  }
-  /* Sparkle effect for the additional message */
-  .sparkle {
-    position: absolute;
-    width: 6 px;
-    height: 6 px;
-    background - color: #fff;
-    border - radius: 50 % ;
-    pointer - events: none;
-    z - index: 11;
-    animation: sparkleTwinkle 1.5 s ease - in - out infinite;
-  }
-  @keyframes sparkleTwinkle {
-    0 % , 100 % {
-      opacity: 0.3;
-      transform: scale(0.5);
-    }
-    50 % {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  /* Sparkle effects for curved text */
-  .curved - sparkle {
-    position: absolute;
-    width: 8 px;
-    height: 8 px;
-    background: radial - gradient(circle, #fff, #ff69b4);
-    border - radius: 50 % ;
-    pointer - events: none;
-    z - index: 11;
-    animation: curvedSparkle 2 s ease - in - out infinite;
-    filter: blur(1 px);
-  }
-  @keyframes curvedSparkle {
-    0 % , 100 % {
-      opacity: 0;
-      transform: scale(0) rotate(0 deg);
-    }
-    50 % {
-      opacity: 1;
-      transform: scale(1) rotate(180 deg);
-    }
-  } <
-  /style> <
-  /head> <
-  body id = "mainBody" >
-  <
-  !--Profil User di Kanan Atas-- >
-  <
-  div class = "user-profile"
-  id = "userProfile" >
-  <
-  div class = "profile-icon" > 👤 < /div> <
-  /div> <
-  div class = "user-info"
-  id = "userInfo" > < /div> <
-  !--Popup Profil-- >
-  <
-  div class = "profile-overlay"
-  id = "profileOverlay" > < /div> <
-  div class = "profile-popup"
-  id = "profilePopup" >
-  <
-  h3 > 👋Kenalan Yuk! < /h3> <
-  p > Masukkan nama dan pesan untuk developer < /p> <
-  input type = "text"
-  class = "profile-input"
-  id = "userName"
-  placeholder = "Masukkan nama kamu..."
-  maxlength = "30" >
-  <
-  textarea class = "profile-input"
-  id = "userMessage"
-  placeholder = "Tulis pesan untuk developer... (maks 200 karakter)"
-  maxlength = "200" > < /textarea> <
-  div class = "success-message"
-  id = "successMessage" > ✅Pesan berhasil dikirim ke developer!
-  <
-  /div> <
-  div class = "error-message"
-  id = "errorMessage" > ❌Gagal mengirim pesan.Coba lagi ya!
-  <
-  /div> <
-  button class = "profile-button"
-  id = "sendMessageBtn" > Kirim Pesan💌 < /button> <
-  button class = "profile-button cancel-button"
-  id = "skipBtn" > Lewati Saja < /button> <
-  p style = "font-size: 0.9em; margin-top: 15px; color: #ffccff;" >
-  Pesan akan dikirim langsung ke developer via Telegram <
-  /p> <
-  /div> <
-  !--Teks melengkung baru di paling atas-- >
-  <
-  div class = "curved-text-container" >
-  <
-  div class = "curved-text"
-  id = "curvedText" > Only For Youu💫 < /div> <
-  /div> <
-  div class = "love-text" > Love You Buat Kamu💫 < /div> <
-  div class = "additional-message"
-  id = "devMessage" > Form Dev For You📸 < /div> <
-  button class = "love-button"
-  id = "loveBtn" > Ayok Klik Akuu👋 < /button> <
-  div class = "button-caption"
-  id = "caption" > Kepoin Yang Buat Yukk Dengan Click Button Di Atas🤭 < /div> <
-  !--WhatsApp Confirmation Popup-- >
-  <
-  div class = "overlay"
-  id = "overlay" > < /div> <
-  div class = "whatsapp-popup"
-  id = "whatsappPopup" >
-  <
-  h3 > 🚀Yuk Chat Developer!🚀 < /h3> <
-  p > Kamu akan diarahkan ke WhatsApp untuk chat dengan developer. < /p> <
-  p > Apakah kamu ingin melanjutkan ? < /p> <
-  button class = "whatsapp-button"
-  id = "confirmWhatsApp" > Ya,
-  Buka WhatsApp < /button> <
-  button class = "whatsapp-button cancel-button"
-  id = "cancelWhatsApp" > Nanti Saja < /button> <
-  /div> <
-  script >
-  // Telegram Bot Configuration - CHAT ID OWNER DITAMBAHKAN
-  const TELEGRAM_BOT_TOKEN = '7955372778:AAEJAuLyCXgbXfEU8Bl9P8x38tR53yOOQDw';
-  const TELEGRAM_CHAT_ID = '8067041468'; // CHAT ID OWNER SUDAH DIMASUKKAN
-  let hasUserSubmitted = false;
-  // Function to create falling stars
-  function createStar() {
-    const star = document.createElement('div');
-    star.className = 'star';
-    star.style.left = Math.random() * 100 + 'vw';
-    star.style.animationDuration = (Math.random() * 3 + 2) + 's';
-    document.body.appendChild(star);
-    setTimeout(() => {
-      star.remove();
-    }, 5000);
-  }
-  // Create stars every 100ms
-  setInterval(createStar, 100);
-  // Function to create lightning effect
-  function createLightning() {
-    const lightning = document.createElement('div');
-    lightning.className = 'lightning';
-    document.body.appendChild(lightning);
-    setTimeout(() => {
-      lightning.remove();
+    @keyframes flash { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+  </style>
+</head>
+
+<body id="mainBody">
+
+  <div class="user-profile" id="userProfile">
+    <div class="profile-icon">👤</div>
+  </div>
+  <div class="user-info" id="userInfo"></div>
+
+  <div class="profile-overlay" id="profileOverlay"></div>
+  <div class="profile-popup" id="profilePopup">
+    <h3>👋 Kenalan Yuk!</h3>
+    <p>Masukkan nama dan pesan untuk developer</p>
+    <input type="text" class="profile-input" id="userName" placeholder="Masukkan nama kamu..." maxlength="30">
+    <textarea class="profile-input" id="userMessage" placeholder="Tulis pesan untuk developer..." maxlength="200"></textarea>
+    <div class="success-message" id="successMessage">✅ Pesan berhasil dikirim!</div>
+    <div class="error-message" id="errorMessage">❌ Gagal mengirim pesan.</div>
+    <button class="profile-button" id="sendMessageBtn">Kirim Pesan💌</button>
+    <button class="profile-button cancel-button" id="skipBtn">Lewati Saja</button>
+  </div>
+
+  <div class="curved-text-container">
+    <div class="curved-text" id="curvedText">Only For Youu💫</div>
+  </div>
+
+  <div class="love-text">Love You Buat Kamu💫</div>
+  <div class="additional-message" id="devMessage">Form Dev For You📸</div>
+  <button class="love-button" id="loveBtn">Ayok Klik Akuu👋</button>
+  <div class="button-caption" id="caption">Kepoin Yang Buat Yukk Dengan Click Button Di Atas🤭</div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="whatsapp-popup" id="whatsappPopup">
+    <h3>🚀 Yuk Chat Developer! 🚀</h3>
+    <p>Buka WhatsApp untuk lanjut?</p>
+    <button class="profile-button" id="confirmWhatsApp" style="background: white; color: #25D366;">Ya, Buka</button>
+    <button class="profile-button cancel-button" id="cancelWhatsApp">Nanti Saja</button>
+  </div>
+
+  <script>
+    const TELEGRAM_BOT_TOKEN = '7955372778:AAEJAuLyCXgbXfEU8Bl9P8x38tR53yOOQDw';
+    const TELEGRAM_CHAT_ID = '8067041468';
+    const whatsappNumber = '628814595506';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+    const finalMessage = "Siapapun Yang Udah Mampir See uu Lagi Orang Baik 😊";
+
+    // Star animation
+    setInterval(() => {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 5000);
     }, 100);
-  }
-  // Trigger lightning randomly every 5-15 seconds
-  function randomLightning() {
-    const delay = Math.random() * 10000 + 5000;
-    setTimeout(() => {
-      createLightning();
-      randomLightning();
-    }, delay);
-  }
-  randomLightning();
-  // Function to create bubble effect on touch/click
-  function createBubble(x, y) {
-    // Create multiple bubbles with different sizes and animations
-    const bubbleCount = Math.floor(Math.random() * 5) + 3; // 3-7 bubbles
-    for (let i = 0; i < bubbleCount; i++) {
-      const bubble = document.createElement('div');
-      bubble.className = 'bubble';
-      // Random size
-      const size = Math.random() * 80 + 40; // 40-120px
-      bubble.style.width = size + 'px';
-      bubble.style.height = size + 'px';
-      // Random position around click point
-      const offsetX = (Math.random() - 0.5) * 100;
-      const offsetY = (Math.random() - 0.5) * 100;
-      bubble.style.left = (x + offsetX) + 'px';
-      bubble.style.top = (y + offsetY) + 'px';
-      // Random animation type
-      const animations = ['bubbleFloat', 'bubbleFloat2', 'bubbleFloat3'];
-      const animationType = animations[Math.floor(Math.random() * animations.length)];
-      const duration = Math.random() * 2 + 1.5; // 1.5-3.5 seconds
-      bubble.style.animation = `${animationType} ${duration}s ease-out forwards`;
-      // Random color variation
-      const hue = Math.floor(Math.random() * 20) + 320; // Pink variations
-      bubble.style.background = `radial-gradient(circle, 
-                    hsla(${hue}, 100%, 80%, 0.1) 0%,
-                    hsla(${hue}, 100%, 70%, 0.2) 30%,
-                    hsla(${hue + 10}, 100%, 60%, 0.1) 70%,
-                    transparent 100%)`;
-      document.body.appendChild(bubble);
-      // Remove bubble after animation
-      setTimeout(() => {
-        if (bubble.parentNode) {
-          bubble.remove();
-        }
-      }, duration * 1000);
+
+    // Lightning effect
+    function createLightning() {
+      const l = document.createElement('div');
+      l.className = 'lightning';
+      l.style.animation = 'flash 0.1s ease-out';
+      document.body.appendChild(l);
+      setTimeout(() => l.remove(), 100);
     }
-    // Sometimes create a heart inside the bubble
-    if (Math.random() > 0.5) {
-      createBubbleHeart(x, y);
+    setInterval(() => { if(Math.random() > 0.95) createLightning(); }, 5000);
+
+    // Bubble effect
+    function createBubble(x, y) {
+      const b = document.createElement('div');
+      b.className = 'bubble';
+      const size = Math.random() * 80 + 40;
+      b.style.width = size + 'px';
+      b.style.height = size + 'px';
+      b.style.left = x + 'px';
+      b.style.top = y + 'px';
+      b.style.animation = `bubbleFloat ${Math.random()*2+1.5}s ease-out forwards`;
+      document.body.appendChild(b);
+      setTimeout(() => b.remove(), 3000);
     }
-  }
-  // Function to create heart inside bubble
-  function createBubbleHeart(x, y) {
-    const heart = document.createElement('div');
-    heart.className = 'bubble-heart';
-    // Random heart character
-    const hearts = ['❤️', '💖', '💕', '💗', '💓', '💞', '💘'];
-    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
-    // Random size
-    const fontSize = Math.random() * 30 + 20; // 20-50px
-    heart.style.fontSize = fontSize + 'px';
-    // Random position
-    const offsetX = (Math.random() - 0.5) * 60;
-    const offsetY = (Math.random() - 0.5) * 60;
-    heart.style.left = (x + offsetX) + 'px';
-    heart.style.top = (y + offsetY) + 'px';
-    // Animation
-    const duration = Math.random() * 2 + 2; // 2-4 seconds
-    heart.style.animation = `heartFloat ${duration}s ease-out forwards`;
-    document.body.appendChild(heart);
-    // Remove heart after animation
-    setTimeout(() => {
-      if (heart.parentNode) {
-        heart.remove();
-      }
-    }, duration * 1000);
-  }
-  // Function to create sparkle effects around the curved text
-  function createCurvedSparkle() {
-    const curvedText = document.getElementById('curvedText');
-    const rect = curvedText.getBoundingClientRect();
-    for (let i = 0; i < 8; i++) {
-      const sparkle = document.createElement('div');
-      sparkle.className = 'curved-sparkle';
-      // Random position around the curved text
-      const offsetX = Math.random() * (rect.width + 100) - 50;
-      const offsetY = Math.random() * (rect.height + 100) - 50;
-      sparkle.style.left = (rect.left + offsetX) + 'px';
-      sparkle.style.top = (rect.top + offsetY) + 'px';
-      sparkle.style.animationDelay = (Math.random() * 2) + 's';
-      sparkle.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
-      // Random size
-      const size = Math.random() * 10 + 5;
-      sparkle.style.width = size + 'px';
-      sparkle.style.height = size + 'px';
-      // Random color
-      const colors = ['#ff69b4', '#ff1493', '#ff99cc', '#ffffff'];
-      sparkle.style.background =
-        `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]}, #ff69b4)`;
-      document.body.appendChild(sparkle);
-      // Remove sparkle after animation
-      setTimeout(() => {
-        sparkle.remove();
-      }, 3000);
+
+    document.addEventListener('click', (e) => {
+      if(!e.target.closest('button')) createBubble(e.clientX, e.clientY);
+    });
+
+    // Telegram Function
+    async function sendToTelegram(name, message) {
+      const text = `📱 Pesan Baru!\n👤 Nama: ${name}\n💌 Pesan: ${message}`;
+      const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(text)}`;
+      try {
+        const res = await fetch(url);
+        return res.ok;
+      } catch (e) { return false; }
     }
-  }
-  // Create sparkles periodically for curved text
-  setInterval(createCurvedSparkle, 1200);
-  // Function to create sparkle effects around the dev message
-  function createSparkle() {
-    const message = document.getElementById('devMessage');
-    const rect = message.getBoundingClientRect();
-    for (let i = 0; i < 5; i++) {
-      const sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      // Random position around the message
-      const offsetX = Math.random() * (rect.width + 40) - 20;
-      const offsetY = Math.random() * (rect.height + 40) - 20;
-      sparkle.style.left = (rect.left + offsetX) + 'px';
-      sparkle.style.top = (rect.top + offsetY) + 'px';
-      sparkle.style.animationDelay = (Math.random() * 1) + 's';
-      document.body.appendChild(sparkle);
-      // Remove sparkle after animation
-      setTimeout(() => {
-        sparkle.remove();
-      }, 2000);
-    }
-  }
-  // Create sparkles periodically for dev message
-  setInterval(createSparkle, 800);
-  // Elements
-  const mainBody = document.getElementById('mainBody');
-  const loveBtn = document.getElementById('loveBtn');
-  const caption = document.getElementById('caption');
-  const devMessage = document.getElementById('devMessage');
-  const curvedText = document.getElementById('curvedText');
-  const whatsappPopup = document.getElementById('whatsappPopup');
-  const overlay = document.getElementById('overlay');
-  const confirmWhatsApp = document.getElementById('confirmWhatsApp');
-  const cancelWhatsApp = document.getElementById('cancelWhatsApp');
-  // Profil elements
-  const userProfile = document.getElementById('userProfile');
-  const userInfo = document.getElementById('userInfo');
-  const profileOverlay = document.getElementById('profileOverlay');
-  const profilePopup = document.getElementById('profilePopup');
-  const userName = document.getElementById('userName');
-  const userMessage = document.getElementById('userMessage');
-  const sendMessageBtn = document.getElementById('sendMessageBtn');
-  const skipBtn = document.getElementById('skipBtn');
-  const successMessage = document.getElementById('successMessage');
-  const errorMessage = document.getElementById('errorMessage');
-  // WhatsApp phone number
-  const whatsappNumber = '6288269905296';
-  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
-  // Pesan terakhir
-  const finalMessage =
-    "Siapapun Yang Udah Mampir See uu Lagi Orang Baik 😊 Selalu Semangat Dan Jangan Lupa Save Nomor Dev! 💖";
-  let messageElement = null;
-  let messageInterval = null;
-  // Show profile popup automatically when page loads
-  document.addEventListener('DOMContentLoaded', function() {
-    // Check if user has already submitted
-    const savedName = localStorage.getItem('userName');
-    if (!savedName) {
-      // Show popup after 2 seconds
-      setTimeout(() => {
-        showProfilePopup();
-      }, 2000);
-    } else {
-      // Show user info if already submitted
-      showUserInfo(savedName);
-    }
-  });
-  // Show profile popup
-  function showProfilePopup() {
-    profileOverlay.style.display = 'block';
-    profilePopup.style.display = 'block';
-    // Create bubbles around popup
-    const rect = profilePopup.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    for (let i = 0; i < 10; i++) {
-      setTimeout(() => {
-        createBubble(
-          centerX + (Math.random() - 0.5) * 200,
-          centerY + (Math.random() - 0.5) * 200
-        );
-      }, i * 100);
-    }
-  }
-  // Hide profile popup
-  function hideProfilePopup() {
-    profileOverlay.style.display = 'none';
-    profilePopup.style.display = 'none';
-  }
-  // Show user info
-  function showUserInfo(name) {
-    userInfo.textContent = `👋 Hai, ${name}!`;
-    userInfo.style.display = 'block';
-    // Auto hide after 5 seconds
-    setTimeout(() => {
-      userInfo.style.display = 'none';
-    }, 5000);
-  }
-  // Send message to Telegram - SUDAH TERHUBUNG DENGAN CHAT ID OWNER
-  async function sendToTelegram(name, message) {
-    try {
-      const telegramMessage = `
-📱 *Pesan Baru dari Website Love Theme!*
-👤 *Pengirim:* ${name}
-💌 *Pesan:* ${message}
-📅 *Tanggal:* ${new Date().toLocaleDateString('id-ID')}
-⏰ *Waktu:* ${new Date().toLocaleTimeString('id-ID')}
-🌐 *URL:* ${window.location.href}
-✅ *Pesan berhasil diterima!*
-                `;
-      // Encode the message for URL
-      const encodedMessage = encodeURIComponent(telegramMessage);
-      // Send message to Telegram using the owner's chat ID
-      const telegramUrl =
-        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodedMessage}&parse_mode=Markdown`;
-      const response = await fetch(telegramUrl);
-      const result = await response.json();
-      if (result.ok) {
-        console.log('✅ Pesan berhasil dikirim ke Telegram!');
-        console.log('📤 Detail Pengiriman:');
-        console.log(`   👤 Nama: ${name}`);
-        console.log(`   💌 Pesan: ${message}`);
-        console.log(`   🆔 Chat ID: ${TELEGRAM_CHAT_ID}`);
-        console.log(`   🤖 Bot: ${result.result.from.first_name}`);
-        console.log(`   📅 Waktu: ${new Date().toLocaleString()}`);
-        return true;
+
+    // Event Listeners
+    const profilePopup = document.getElementById('profilePopup');
+    const profileOverlay = document.getElementById('profileOverlay');
+
+    document.getElementById('userProfile').onclick = () => {
+      profilePopup.style.display = 'block';
+      profileOverlay.style.display = 'block';
+    };
+
+    document.getElementById('skipBtn').onclick = () => {
+      profilePopup.style.display = 'none';
+      profileOverlay.style.display = 'none';
+    };
+
+    document.getElementById('sendMessageBtn').onclick = async function() {
+      const name = document.getElementById('userName').value;
+      const msg = document.getElementById('userMessage').value;
+      if(!name || !msg) return alert("Isi nama dan pesan dulu ya!");
+      
+      this.textContent = "Mengirim...";
+      const success = await sendToTelegram(name, msg);
+      if(success) {
+        document.getElementById('successMessage').style.display = 'block';
+        setTimeout(() => {
+          profilePopup.style.display = 'none';
+          profileOverlay.style.display = 'none';
+        }, 2000);
       } else {
-        console.error('❌ Gagal mengirim ke Telegram:', result);
-        return false;
+        document.getElementById('errorMessage').style.display = 'block';
       }
-    } catch (error) {
-      console.error('❌ Error mengirim ke Telegram:', error);
-      return false;
-    }
-  }
-  // Event listeners for profile
-  userProfile.addEventListener('click', function() {
-    const savedName = localStorage.getItem('userName');
-    if (savedName) {
-      showUserInfo(savedName);
-    } else {
-      showProfilePopup();
-    }
-  });
-  sendMessageBtn.addEventListener('click', async function() {
-    const name = userName.value.trim();
-    const message = userMessage.value.trim();
-    if (!name) {
-      userName.style.borderColor = '#ff4757';
-      userName.focus();
-      return;
-    }
-    if (!message) {
-      userMessage.style.borderColor = '#ff4757';
-      userMessage.focus();
-      return;
-    }
-    // Reset border colors
-    userName.style.borderColor = 'rgba(255, 255, 255, 0.4)';
-    userMessage.style.borderColor = 'rgba(255, 255, 255, 0.4)';
-    // Show loading
-    this.textContent = 'Mengirim ke Telegram...';
-    this.disabled = true;
-    // Send to Telegram
-    const success = await sendToTelegram(name, message);
-    if (success) {
-      // Save to localStorage
-      localStorage.setItem('userName', name);
-      localStorage.setItem('userMessage', message);
-      localStorage.setItem('userSubmitted', 'true');
-      hasUserSubmitted = true;
-      // Show success message
-      successMessage.style.display = 'block';
-      errorMessage.style.display = 'none';
-      // Create celebration effects
-      for (let i = 0; i < 20; i++) {
-        createHeart();
-      }
-      // Create special bubble effect
-      const rect = this.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      for (let i = 0; i < 15; i++) {
-        createBubble(
-          centerX + (Math.random() - 0.5) * 150,
-          centerY + (Math.random() - 0.5) * 150
-        );
-      }
-      // Hide popup after 2 seconds
-      setTimeout(() => {
-        hideProfilePopup();
-        showUserInfo(name);
-        // Reset button
-        this.textContent = 'Kirim Pesan 💌';
-        this.disabled = false;
-      }, 2000);
-    } else {
-      // Show error message
-      errorMessage.style.display = 'block';
-      successMessage.style.display = 'none';
-      // Reset button
-      this.textContent = 'Coba Lagi 🔄';
-      setTimeout(() => {
-        this.textContent = 'Kirim Pesan 💌';
-        this.disabled = false;
-      }, 2000);
-    }
-  });
-  skipBtn.addEventListener('click', function() {
-    hideProfilePopup();
-    // Set a flag so it doesn't show again
-    localStorage.setItem('userSkipped', 'true');
-  });
-  // Close popup when clicking overlay
-  profileOverlay.addEventListener('click', function() {
-    hideProfilePopup();
-  });
-  // Function to show random message
-  function showRandomMessage() {
-    // Remove existing message if any
-    if (messageElement && messageElement.parentNode) {
-      messageElement.remove();
-    }
-    // Create new message element
-    messageElement = document.createElement('div');
-    messageElement.className = 'random-message';
-    messageElement.textContent = finalMessage;
-    messageElement.style.cursor = 'pointer';
-    // Random position: 70-90%
-    const minX = 70;
-    const maxX = 90;
-    const minY = 70;
-    const maxY = 90;
-    const randomX = Math.random() * (maxX - minX) + minX;
-    const randomY = Math.random() * (maxY - minY) + minY;
-    messageElement.style.left = `${randomX}%`;
-    messageElement.style.top = `${randomY}%`;
-    // Random duration for appearance
-    const duration = Math.random() * 4 + 6;
-    // Add animation
-    messageElement.style.animation =
-      `messageAppear ${duration}s ease-in-out forwards, messageGlow 3s ease-in-out infinite`;
-    // Add to body
-    document.body.appendChild(messageElement);
-    // Create bubbles around message
-    const rect = messageElement.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    // Create bubbles when message appears
-    for (let i = 0; i < 8; i++) {
-      setTimeout(() => {
-        const angle = (Math.PI * 2 * i) / 8;
-        const radius = 100;
-        const bubbleX = centerX + Math.cos(angle) * radius;
-        const bubbleY = centerY + Math.sin(angle) * radius;
-        createBubble(bubbleX, bubbleY);
-      }, i * 100);
-    }
-    // Create hearts from message
-    for (let i = 0; i < 5; i++) {
-      setTimeout(() => {
-        createBubbleHeart(centerX, centerY);
-      }, i * 200);
-    }
-    // Remove message after animation
-    setTimeout(() => {
-      if (messageElement && messageElement.parentNode) {
-        messageElement.remove();
-      }
-    }, duration * 1000);
-  }
-  // Start random message interval
-  function startMessageInterval() {
-    // Show first message after 3 seconds
-    setTimeout(() => {
-      showRandomMessage();
-    }, 3000);
-    // Then show at random intervals
-    messageInterval = setInterval(() => {
-      const randomDelay = Math.random() * 15000 + 10000;
-      setTimeout(showRandomMessage, randomDelay);
-    }, 35000);
-  }
-  // Event listener for touch/click on body to create bubbles
-  mainBody.addEventListener('click', function(e) {
-    // Don't create bubbles if clicking on button or popup
-    if (e.target.closest('.love-button') ||
-      e.target.closest('.whatsapp-popup') ||
-      e.target.closest('.whatsapp-button') ||
-      e.target.closest('.random-message') ||
-      e.target.closest('.profile-popup') ||
-      e.target.closest('.profile-button') ||
-      e.target.closest('.profile-icon')) {
-      return;
-    }
-    // Create bubble effect at click position
-    createBubble(e.clientX, e.clientY);
-    // Also create some random bubbles around
-    for (let i = 0; i < 3; i++) {
-      setTimeout(() => {
-        const randomX = Math.random() * window.innerWidth;
-        const randomY = Math.random() * window.innerHeight;
-        createBubble(randomX, randomY);
-      }, i * 100);
-    }
-  });
-  // Event listener for touch events (for mobile)
-  mainBody.addEventListener('touchstart', function(e) {
-    e.preventDefault();
-    const touch = e.touches[0];
-    createBubble(touch.clientX, touch.clientY);
-  });
-  // Button click effect
-  loveBtn.addEventListener('click', function(e) {
-    // Stop event propagation to prevent bubble creation on button click
-    e.stopPropagation();
-    // Create multiple hearts
-    for (let i = 0; i < 15; i++) {
-      createHeart();
-    }
-    // Create bubble explosion around button
-    const rect = this.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    for (let i = 0; i < 10; i++) {
-      setTimeout(() => {
-        const angle = (Math.PI * 2 * i) / 10;
-        const radius = 100;
-        const bubbleX = centerX + Math.cos(angle) * radius;
-        const bubbleY = centerY + Math.sin(angle) * radius;
-        createBubble(bubbleX, bubbleY);
-      }, i * 50);
-    }
-    // Button expansion effect
-    this.style.transform = 'translate(-50%, -50%) scale(1.3)';
-    this.style.boxShadow = '0 0 50px rgba(255, 105, 180, 1)';
-    // Change button text temporarily
-    const originalText = this.textContent;
-    this.textContent = "Membuka WhatsApp... 💌";
-    // Caption animation effect
-    caption.style.transform = 'translate(-50%, -50%) scale(1.1)';
-    caption.style.background = 'rgba(255, 105, 180, 0.3)';
-    caption.style.textShadow = '0 0 20px rgba(255, 105, 180, 1)';
-    // Dev message special expansion effect
-    devMessage.style.animation = 'none';
-    devMessage.style.transform = 'scale(1.4)';
-    devMessage.style.boxShadow = '0 0 60px rgba(255, 105, 180, 0.9)';
-    devMessage.style.background = 'linear-gradient(45deg, rgba(255, 105, 180, 0.4), rgba(255, 20, 147, 0.4))';
-    devMessage.style.borderColor = 'rgba(255, 105, 180, 0.9)';
-    // Curved text special effect
-    curvedText.style.animation =
-      'waveMove 4s ease-in-out infinite, pulseGlow 1s ease-in-out infinite, floatUpDown 2s ease-in-out infinite';
-    curvedText.style.transform = 'scale(1.3) rotateX(15deg)';
-    curvedText.style.boxShadow = '0 0 60px rgba(255, 105, 180, 0.9)';
-    // Create extra sparkles for dev message
-    for (let i = 0; i < 10; i++) {
-      createSparkle();
-    }
-    // Create extra sparkles for curved text
-    for (let i = 0; i < 15; i++) {
-      createCurvedSparkle();
-    }
-    // Show WhatsApp confirmation popup after 1 second
-    setTimeout(() => {
-      showWhatsAppPopup();
-      this.textContent = originalText;
-      // Reset button
-      this.style.transform = 'translate(-50%, -50%) scale(1)';
-      this.style.boxShadow = '0 0 20px rgba(255, 105, 180, 0.7)';
-      // Reset other elements
-      resetElements();
-    }, 1000);
-    // Change caption text briefly
-    const originalCaptionText = caption.textContent;
-    caption.textContent = "Siap-siap buka WhatsApp! 📱";
-    setTimeout(() => {
-      caption.textContent = originalCaptionText;
-    }, 1500);
-  });
-  // Show WhatsApp confirmation popup
-  function showWhatsAppPopup() {
-    overlay.style.display = 'block';
-    whatsappPopup.style.display = 'block';
-    // Add heartbeat effect to popup
-    whatsappPopup.style.animation = 'popupAppear 0.5s ease-out, pulse 2s infinite';
-    // Create bubbles around popup
-    const rect = whatsappPopup.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    for (let i = 0; i < 8; i++) {
-      setTimeout(() => {
-        const angle = (Math.PI * 2 * i) / 8;
-        const radius = 150;
-        const bubbleX = centerX + Math.cos(angle) * radius;
-        const bubbleY = centerY + Math.sin(angle) * radius;
-        createBubble(bubbleX, bubbleY);
-      }, i * 100);
-    }
-  }
-  // Hide WhatsApp confirmation popup
-  function hideWhatsAppPopup() {
-    overlay.style.display = 'none';
-    whatsappPopup.style.display = 'none';
-  }
-  // Reset elements after animation
-  function resetElements() {
-    caption.style.transform = 'translate(-50%, -50%) scale(1)';
-    caption.style.background = 'rgba(255, 105, 180, 0.1)';
-    caption.style.textShadow = '0 0 8px rgba(255, 105, 180, 0.8)';
-    devMessage.style.animation = 'expandText 5s ease-in-out infinite';
-    devMessage.style.transform = 'scale(1)';
-    curvedText.style.animation =
-      'waveMove 4s ease-in-out infinite, pulseGlow 2s ease-in-out infinite, floatUpDown 3s ease-in-out infinite';
-    curvedText.style.transform = 'scale(1)';
-  }
-  // Confirm WhatsApp button
-  confirmWhatsApp.addEventListener('click', function() {
-    // Create special effects
-    for (let i = 0; i < 20; i++) {
-      createWhatsAppHeart();
-    }
-    // Create green bubbles for WhatsApp theme
-    const rect = this.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    for (let i = 0; i < 15; i++) {
-      setTimeout(() => {
-        createWhatsAppBubble(centerX, centerY);
-      }, i * 50);
-    }
-    // Change button text
-    this.textContent = "Membuka... ✅";
-    this.disabled = true;
-    // Special effect for curved text when opening WhatsApp
-    curvedText.style.animation = 'waveMove 2s ease-in-out infinite, pulseGlow 0.5s ease-in-out infinite';
-    curvedText.style.color = '#25D366';
-    curvedText.style.textShadow = '0 0 20px #25D366';
-    // Open WhatsApp after 1 second
-    setTimeout(() => {
+      this.textContent = "Kirim Pesan💌";
+    };
+
+    document.getElementById('loveBtn').onclick = () => {
+      document.getElementById('whatsappPopup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    };
+
+    document.getElementById('confirmWhatsApp').onclick = () => {
       window.open(whatsappUrl, '_blank');
-      hideWhatsAppPopup();
-      // Show special message after opening WhatsApp
-      setTimeout(() => {
-        showSpecialMessage();
-      }, 500);
-      // Reset curved text
-      setTimeout(() => {
-        curvedText.style.color = '#ff69b4';
-        curvedText.style.textShadow = '0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff1493';
-        curvedText.style.animation =
-          'waveMove 4s ease-in-out infinite, pulseGlow 2s ease-in-out infinite, floatUpDown 3s ease-in-out infinite';
-        // Reset button
-        this.textContent = "Ya, Buka WhatsApp";
-        this.disabled = false;
-      }, 1000);
-    }, 1000);
-  });
-  // Function to create WhatsApp themed bubbles
-  function createWhatsAppBubble(x, y) {
-    const bubble = document.createElement('div');
-    bubble.className = 'bubble';
-    // Size
-    const size = Math.random() * 60 + 30;
-    bubble.style.width = size + 'px';
-    bubble.style.height = size + 'px';
-    // Position
-    const offsetX = (Math.random() - 0.5) * 80;
-    const offsetY = (Math.random() - 0.5) * 80;
-    bubble.style.left = (x + offsetX) + 'px';
-    bubble.style.top = (y + offsetY) + 'px';
-    // WhatsApp green color
-    bubble.style.background = `radial-gradient(circle, 
-                rgba(37, 211, 102, 0.2) 0%,
-                rgba(37, 211, 102, 0.3) 30%,
-                rgba(18, 140, 126, 0.2) 70%,
-                transparent 100%)`;
-    bubble.style.boxShadow =
-      `inset 0 0 20px rgba(255, 255, 255, 0.2),
-                 0 0 20px rgba(37, 211, 102, 0.4),
-                 inset 0 0 40px rgba(18, 140, 126, 0.3)`;
-    // Animation
-    const duration = Math.random() * 2 + 1.5;
-    bubble.style.animation = `bubbleFloat ${duration}s ease-out forwards`;
-    document.body.appendChild(bubble);
-    // Remove after animation
-    setTimeout(() => {
-      if (bubble.parentNode) {
-        bubble.remove();
-      }
-    }, duration * 1000);
-  }
-  // Function to show special message after WhatsApp
-  function showSpecialMessage() {
-    const specialMessage = document.createElement('div');
-    specialMessage.className = 'random-message';
-    specialMessage.textContent = "Jangan lupa chat developer yah! 😊";
-    specialMessage.style.animation = 'messageAppear 8s ease-in-out forwards, messageGlow 2s ease-in-out infinite';
-    specialMessage.style.left = '50%';
-    specialMessage.style.top = '30%';
-    specialMessage.style.zIndex = '1001';
-    specialMessage.style.fontSize = '1.6em';
-    specialMessage.style.background = 'linear-gradient(45deg, rgba(37, 211, 102, 0.4), rgba(18, 140, 126, 0.4))';
-    document.body.appendChild(specialMessage);
-    // Remove after 8 seconds
-    setTimeout(() => {
-      if (specialMessage.parentNode) {
-        specialMessage.remove();
-      }
-    }, 8000);
-  }
-  // Cancel WhatsApp button
-  cancelWhatsApp.addEventListener('click', function() {
-    hideWhatsAppPopup();
-    // Show cancellation message on button
-    loveBtn.textContent = "Yahh Batal 😢";
-    setTimeout(() => {
-      loveBtn.textContent = "Ayok Klik Akuu👋";
-    }, 1500);
-  });
-  // Function to create floating hearts for WhatsApp
-  function createWhatsAppHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.innerHTML = '💚';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
-    heart.style.color = '#25D366';
-    const duration = Math.random() * 3 + 2;
-    heart.style.animation = `heartFloat ${duration}s ease-out forwards`;
-    document.body.appendChild(heart);
-    setTimeout(() => {
-      heart.remove();
-    }, duration * 1000);
-  }
-  // Function to create floating hearts
-  function createHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.innerHTML = '❤️';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
-    const duration = Math.random() * 3 + 2;
-    heart.style.animation = `heartFloat ${duration}s ease-out forwards`;
-    if (!document.querySelector('#heartAnimation')) {
-      const style = document.createElement('style');
-      style.id = 'heartAnimation';
-      style.textContent = `
-                    @keyframes heartFloat {
-                        0% {
-                            transform: translateY(0) rotate(0deg);
-                            opacity: 1;
-                        }
-                        100% {
-                            transform: translateY(-100vh) rotate(360deg);
-                            opacity: 0;
-                        }
-                    }
-                `;
-      document.head.appendChild(style);
+      document.getElementById('whatsappPopup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    };
+
+    document.getElementById('cancelWhatsApp').onclick = () => {
+      document.getElementById('whatsappPopup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    };
+
+    // Show random message
+    function showRandomMessage() {
+      const msg = document.createElement('div');
+      msg.className = 'random-message';
+      msg.textContent = finalMessage;
+      msg.style.left = '50%';
+      msg.style.top = '50%';
+      msg.style.animation = 'messageAppear 5s ease-in-out forwards';
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 5000);
     }
-    document.body.appendChild(heart);
-    setTimeout(() => {
-      heart.remove();
-    }, duration * 1000);
-  }
-  // Optional: Auto-create some hearts occasionally
-  setInterval(() => {
-    if (Math.random() > 0.7) {
-      createHeart();
-    }
-  }, 3000);
-  // Auto-create random bubbles occasionally
-  setInterval(() => {
-    if (Math.random() > 0.8) {
-      const randomX = Math.random() * window.innerWidth;
-      const randomY = Math.random() * window.innerHeight;
-      createBubble(randomX, randomY);
-    }
-  }, 2000);
-  // Add click effect to caption too
-  caption.addEventListener('click', function(e) {
-    e.stopPropagation();
-    loveBtn.click();
-    this.style.transform = 'translate(-50%, -50%) scale(1.15)';
-    setTimeout(() => {
-      this.style.transform = 'translate(-50%, -50%) scale(1)';
-    }, 200);
-  });
-  // Make caption cursor pointer
-  caption.style.cursor = 'pointer';
-  // Add hover effect to dev message
-  devMessage.addEventListener('mouseenter', function() {
-    this.style.transform = 'scale(1.2)';
-    this.style.boxShadow = '0 0 50px rgba(255, 105, 180, 0.8)';
-  });
-  devMessage.addEventListener('mouseleave', function() {
-    this.style.transform = 'scale(1)';
-    this.style.boxShadow = '0 0 20px rgba(255, 105, 180, 0.3)';
-  });
-  // Add hover effect to curved text
-  curvedText.addEventListener('mouseenter', function() {
-    this.style.animation =
-      'waveMove 2s ease-in-out infinite, pulseGlow 1s ease-in-out infinite, floatUpDown 2s ease-in-out infinite';
-    this.style.transform = 'scale(1.2)';
-    this.style.boxShadow = '0 0 50px rgba(255, 105, 180, 0.9)';
-    for (let i = 0; i < 10; i++) {
-      createCurvedSparkle();
-    }
-  });
-  curvedText.addEventListener('mouseleave', function() {
-    this.style.animation =
-      'waveMove 4s ease-in-out infinite, pulseGlow 2s ease-in-out infinite, floatUpDown 3s ease-in-out infinite';
-    this.style.transform = 'scale(1)';
-    this.style.boxShadow = '0 0 25px rgba(255, 105, 180, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.1)';
-  });
-  // Add click effect to curved text
-  curvedText.addEventListener('click', function(e) {
-    e.stopPropagation();
-    for (let i = 0; i < 20; i++) {
-      createHeart();
-    }
-    const rect = this.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    for (let i = 0; i < 15; i++) {
-      createBubble(
-        centerX + (Math.random() - 0.5) * 200,
-        centerY + (Math.random() - 0.5) * 200
-      );
-    }
-    this.style.transform = 'scale(1.5)';
-    this.style.boxShadow = '0 0 80px rgba(255, 105, 180, 1)';
-    for (let i = 0; i < 25; i++) {
-      createCurvedSparkle();
-    }
-    setTimeout(() => {
-      this.style.transform = 'scale(1)';
-      this.style.boxShadow = '0 0 25px rgba(255, 105, 180, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.1)';
-    }, 500);
-  });
-  // Make curved text cursor pointer
-  curvedText.style.cursor = 'pointer';
-  // Add click effect to love text
-  const loveText = document.querySelector('.love-text');
-  loveText.addEventListener('click', function(e) {
-    e.stopPropagation();
-    const rect = this.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    for (let i = 0; i < 10; i++) {
-      createBubble(
-        centerX + (Math.random() - 0.5) * 150,
-        centerY + (Math.random() - 0.5) * 150
-      );
-    }
-    this.style.transform = 'translate(-50%, -50%) scale(1.3)';
-    this.style.color = '#ff1493';
-    setTimeout(() => {
-      this.style.transform = 'translate(-50%, -50%) scale(1)';
-      this.style.color = '#ff69b4';
-    }, 300);
-  });
-  // Make love text cursor pointer
-  loveText.style.cursor = 'pointer';
-  // Add click effect to random message
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('random-message')) {
-      const rect = e.target.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      for (let i = 0; i < 20; i++) {
-        createBubble(
-          centerX + (Math.random() - 0.5) * 150,
-          centerY + (Math.random() - 0.5) * 150
-        );
-      }
-      e.target.style.transform = 'translate(-50%, -50%) scale(1.2)';
-      setTimeout(() => {
-        e.target.style.transform = 'translate(-50%, -50%) scale(1)';
-      }, 300);
-    }
-  });
-  // Add instruction tooltip
-  setTimeout(() => {
-    const instruction = document.createElement('div');
-    instruction.innerHTML = '💡 Klik/tap di mana saja untuk efek gelembung!';
-    instruction.style.position = 'fixed';
-    instruction.style.bottom = '10px';
-    instruction.style.left = '50%';
-    instruction.style.transform = 'translateX(-50%)';
-    instruction.style.background = 'rgba(255, 105, 180, 0.3)';
-    instruction.style.color = 'white';
-    instruction.style.padding = '10px 20px';
-    instruction.style.borderRadius = '20px';
-    instruction.style.fontSize = '0.9em';
-    instruction.style.backdropFilter = 'blur(5px)';
-    instruction.style.zIndex = '100';
-    instruction.style.textAlign = 'center';
-    instruction.style.animation = 'fadeInOut 5s ease-in-out';
-    document.body.appendChild(instruction);
-    setTimeout(() => {
-      instruction.remove();
-    }, 5000);
-  }, 2000);
-  // Start the random message interval
-  startMessageInterval();
-  // Show profile popup on page load if user hasn't submitted
-  if (!localStorage.getItem('userName') && !localStorage.getItem('userSkipped')) {
-    setTimeout(() => {
-      showProfilePopup();
-    }, 1000);
-  } else if (localStorage.getItem('userName')) {
-    showUserInfo(localStorage.getItem('userName'));
-  }
-  // Log Telegram configuration
-  console.log('🤖 Telegram Bot Configuration:');
-  console.log(`   Token: ${TELEGRAM_BOT_TOKEN}`);
-  console.log(`   Chat ID: ${TELEGRAM_CHAT_ID}`);
-  console.log(`   Bot Status: ✅ Active`);
-  console.log(`   Owner: Developer`); 
-  </script> 
-  </body> 
-  </html>
+    setInterval(showRandomMessage, 15000);
+
+  </script>
+</body>
+</html>
